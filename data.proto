@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package test;
+
+service TestClientRecv{
+  rpc TestClientRecvStream(TestClientRecvStreamRequest)  returns(stream TestClientRecvStreamResponse){}
+}
+
+message TestClientRecvStreamRequest{
+  string data = 1;
+}
+
+message TestClientRecvStreamResponse{
+  string result = 1;
+}
